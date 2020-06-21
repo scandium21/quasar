@@ -1,9 +1,9 @@
 <template>
   <q-item
+    :to="link"
+    class="text-grey-5"
     clickable
-    tag="a"
-    target="_blank"
-    :href="link"
+    exact
   >
     <q-item-section
       v-if="icon"
@@ -14,9 +14,9 @@
 
     <q-item-section>
       <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>
+      <!-- <q-item-label caption>
         {{ caption }}
-      </q-item-label>
+      </q-item-label> -->
     </q-item-section>
   </q-item>
 </template>
@@ -30,14 +30,9 @@ export default {
       required: true
     },
 
-    caption: {
-      type: String,
-      default: ''
-    },
-
     link: {
       type: String,
-      default: '#'
+      default: ''
     },
 
     icon: {
